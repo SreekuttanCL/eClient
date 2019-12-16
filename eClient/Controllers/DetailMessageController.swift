@@ -17,6 +17,10 @@ class DetailMessageController: UIViewController {
     
     var selectedMail : Posts?
     
+    var eTitle:String?
+    var eMessage: String?
+    var eDescription: String?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         

@@ -22,6 +22,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     //Pull to Refresh table view content control
     var refreshControl = UIRefreshControl()
     
+    let searchController = UISearchController(searchResultsController: nil)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -36,6 +38,21 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         refreshTableView()
         
         fetchData()
+        
+        
+        searchController.searchResultsUpdater = self
+        
+        searchController.obscuresBackgroundDuringPresentation = false
+        
+        searchController.searchBar.placeholder = "Search Emails"
+        
+        navigationItem.searchController = searchController
+        
+        definesPresentationContext = true
+        
+        var isSearchBarEmpty: Bool {
+          return searchController.searchBar.text?.isEmpty ?? true
+        }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -161,5 +178,19 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
     }
     
+    func filterContentForSearchText(_ searchText: String) {
+      posts = posts.filter { (posts: Posts) -> Bool in
+        return true
+      }
+      
+      inboxTableView.reloadData()
+    }
+    
+}
+
+extension ViewController: UISearchResultsUpdating {
+  func updateSearchResults(for searchController: UISearchController) {
+    
+  }
 }
 

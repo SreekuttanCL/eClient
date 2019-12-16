@@ -37,6 +37,8 @@ class SendMessageController: UIViewController {
             
             Alamofire.request(baseURL + "posts/", method: .post, parameters: parameters, encoding: JSONEncoding.default).responseJSON { response in
                 print(response)
+                
+                sendMails.append(parameters)
             }
         }
         else {

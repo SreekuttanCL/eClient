@@ -10,3 +10,6 @@ import Foundation
 
 
 var baseURL = "https://jsonplaceholder.typicode.com/"
+
+var sendMails = [Dictionary<String, String>()]
+var archives = [Dictionary<String, String>()]

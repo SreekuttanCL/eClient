@@ -7,7 +7,7 @@
 //
 
 import UIKit
-var archives = [Dictionary<String, String>()]
+
 
 class ArchiveViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
