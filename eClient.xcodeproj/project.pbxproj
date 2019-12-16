@@ -23,6 +23,8 @@
 		DA83386823A7E1AF0062936C /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA83386723A7E1AF0062936C /* Users.swift */; };
 		DA83386B23A7E1FB0062936C /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA83386A23A7E1FB0062936C /* Address.swift */; };
 		DA83386D23A7E6C30062936C /* SendMessageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA83386C23A7E6C30062936C /* SendMessageController.swift */; };
+		DA83386F23A7F68E0062936C /* ArchieveTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA83386E23A7F68E0062936C /* ArchieveTableViewCell.swift */; };
+		DA83387123A7F7190062936C /* ArchiveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA83387023A7F7190062936C /* ArchiveViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +46,8 @@
 		DA83386723A7E1AF0062936C /* Users.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
 		DA83386A23A7E1FB0062936C /* Address.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
 		DA83386C23A7E6C30062936C /* SendMessageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendMessageController.swift; sourceTree = "<group>"; };
+		DA83386E23A7F68E0062936C /* ArchieveTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchieveTableViewCell.swift; sourceTree = "<group>"; };
+		DA83387023A7F7190062936C /* ArchiveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchiveViewController.swift; sourceTree = "<group>"; };
 		DBEE0E6384089C9511D4DF0D /* Pods-eClient.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-eClient.release.xcconfig"; path = "Target Support Files/Pods-eClient/Pods-eClient.release.xcconfig"; sourceTree = "<group>"; };
 		EF687A1555483C57D7CF1AA5 /* Pods-eClient.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-eClient.debug.xcconfig"; path = "Target Support Files/Pods-eClient/Pods-eClient.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -110,6 +114,7 @@
 				DA83384523A7BEC90062936C /* ViewController.swift */,
 				DA83386523A7DD590062936C /* DetailMessageController.swift */,
 				DA83386C23A7E6C30062936C /* SendMessageController.swift */,
+				DA83387023A7F7190062936C /* ArchiveViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -152,6 +157,7 @@
 			isa = PBXGroup;
 			children = (
 				DA83386123A7D4F50062936C /* InboxTabelViewCell.swift */,
+				DA83386E23A7F68E0062936C /* ArchieveTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -291,6 +297,7 @@
 			files = (
 				DA83384623A7BEC90062936C /* ViewController.swift in Sources */,
 				DA83386623A7DD590062936C /* DetailMessageController.swift in Sources */,
+				DA83386F23A7F68E0062936C /* ArchieveTableViewCell.swift in Sources */,
 				DA83386823A7E1AF0062936C /* Users.swift in Sources */,
 				DA83385F23A7D35A0062936C /* Posts.swift in Sources */,
 				DA83384223A7BEC90062936C /* AppDelegate.swift in Sources */,
@@ -301,6 +308,7 @@
 				DA83386D23A7E6C30062936C /* SendMessageController.swift in Sources */,
 				DA83386B23A7E1FB0062936C /* Address.swift in Sources */,
 				DA83384423A7BEC90062936C /* SceneDelegate.swift in Sources */,
+				DA83387123A7F7190062936C /* ArchiveViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

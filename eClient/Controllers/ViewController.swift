@@ -67,9 +67,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             tableView.deleteRows(at: [indexPath], with: .fade)
         }
 
-        let share = UITableViewRowAction(style: .default, title: "Share") { (action, indexPath) in
+        let share = UITableViewRowAction(style: .default, title: "Archive") { (action, indexPath) in
             // share item at indexPath
-            print("I want to share: \(self.posts[indexPath.row])")
+            let post = self.posts[indexPath.row]
+            archives.append(["userId": "\(post.userId)", "id": "\(post.id)", "title":post.title!,"body": post.body!])
         }
 
         share.backgroundColor = UIColor.lightGray

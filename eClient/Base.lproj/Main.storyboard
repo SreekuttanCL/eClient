@@ -92,21 +92,23 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RPt-Ri-64a">
                                 <rect key="frame" x="-307" y="88" width="307" height="808"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U1e-lH-Ucf">
-                                        <rect key="frame" x="75" y="100" width="203" height="53"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U1e-lH-Ucf">
+                                        <rect key="frame" x="75" y="50" width="203" height="53"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="53" id="Rl5-1W-doE"/>
+                                            <constraint firstAttribute="height" constant="53" id="vwU-qe-Vfl"/>
                                         </constraints>
-                                        <state key="normal" title="Sent Item"/>
+                                        <state key="normal" title="Sent Item" image="paperplane.fill" catalog="system">
+                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        </state>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="307" id="985-6c-Wc7"/>
-                                    <constraint firstItem="U1e-lH-Ucf" firstAttribute="leading" secondItem="RPt-Ri-64a" secondAttribute="leading" constant="75" id="JVh-RV-HWn"/>
-                                    <constraint firstAttribute="trailing" secondItem="U1e-lH-Ucf" secondAttribute="trailing" constant="29" id="Y80-P1-a0d"/>
+                                    <constraint firstItem="U1e-lH-Ucf" firstAttribute="top" secondItem="RPt-Ri-64a" secondAttribute="top" constant="50" id="KNG-h3-XHd"/>
                                     <constraint firstAttribute="height" constant="808" id="Z5W-nJ-3B3"/>
-                                    <constraint firstItem="U1e-lH-Ucf" firstAttribute="top" secondItem="RPt-Ri-64a" secondAttribute="top" constant="100" id="rRq-B5-MLN"/>
+                                    <constraint firstAttribute="trailing" secondItem="U1e-lH-Ucf" secondAttribute="trailing" constant="29" id="h12-up-X76"/>
+                                    <constraint firstItem="U1e-lH-Ucf" firstAttribute="leading" secondItem="RPt-Ri-64a" secondAttribute="leading" constant="75" id="zaq-aO-mcV"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -128,11 +130,18 @@
                                 <action selector="openMenu:" destination="BYZ-38-t0r" id="oUN-gP-FiA"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" image="square.and.pencil" catalog="system" id="dM0-2I-JkF">
-                            <connections>
-                                <segue destination="ShW-QP-ElX" kind="show" identifier="sendMessage" id="Z6c-dY-jg5"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem image="square.and.pencil" catalog="system" id="dM0-2I-JkF">
+                                <connections>
+                                    <segue destination="ShW-QP-ElX" kind="show" identifier="sendMessage" id="Z6c-dY-jg5"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Item" image="archivebox" catalog="system" id="GsQ-RH-TpP">
+                                <connections>
+                                    <segue destination="xen-EM-Isq" kind="show" id="Jnw-iH-ka2"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <connections>
                         <outlet property="inboxTableView" destination="aIf-N6-c2q" id="cg5-tL-nnZ"/>
@@ -143,6 +152,86 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1047.8260869565217" y="129.91071428571428"/>
+        </scene>
+        <!--Archieve-->
+        <scene sceneID="7Zn-Iv-XAe">
+            <objects>
+                <viewController id="xen-EM-Isq" customClass="ArchiveViewController" customModule="eClient" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="PZ8-yM-RnE">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="yhf-WX-j9i">
+                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="414" id="E0X-5E-MWv"/>
+                                    <constraint firstAttribute="height" constant="808" id="vGB-xt-mXp"/>
+                                </constraints>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="default" indentationWidth="10" reuseIdentifier="archiveCell" rowHeight="150" id="R7D-rQ-tAd" customClass="ArchieveTableViewCell" customModule="eClient" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="150"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="R7D-rQ-tAd" id="BXg-JM-HVM">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="150"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="gjZ-1U-U4w">
+                                                    <rect key="frame" x="20" y="21" width="73.5" height="95"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email Id" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PSR-sL-Xop">
+                                                            <rect key="frame" x="0.0" y="0.0" width="73.5" height="24"/>
+                                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Message" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wJe-Cr-Q32">
+                                                            <rect key="frame" x="0.0" y="38" width="73.5" height="21.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Subject" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oOY-M5-zhW">
+                                                            <rect key="frame" x="0.0" y="73.5" width="73.5" height="21.5"/>
+                                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="labelEmail" destination="PSR-sL-Xop" id="89F-Tb-k79"/>
+                                            <outlet property="labelMessage" destination="wJe-Cr-Q32" id="iob-b0-qrx"/>
+                                            <outlet property="labelSubject" destination="oOY-M5-zhW" id="mlO-Ag-i7K"/>
+                                            <segue destination="eMh-bq-haa" kind="show" identifier="showMessage" id="CI3-pN-SYe"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="xen-EM-Isq" id="WQX-Hr-gU1"/>
+                                    <outlet property="delegate" destination="xen-EM-Isq" id="i4n-cK-9Zn"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="yhf-WX-j9i" firstAttribute="trailing" secondItem="uUY-BU-xVI" secondAttribute="trailing" id="EaD-eX-gbC"/>
+                            <constraint firstAttribute="bottom" secondItem="yhf-WX-j9i" secondAttribute="bottom" id="XZZ-5H-7aO"/>
+                            <constraint firstItem="yhf-WX-j9i" firstAttribute="leading" secondItem="uUY-BU-xVI" secondAttribute="leading" id="tNQ-O4-J9P"/>
+                            <constraint firstItem="yhf-WX-j9i" firstAttribute="top" secondItem="uUY-BU-xVI" secondAttribute="top" id="yk1-uQ-fFv"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="uUY-BU-xVI"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Archieve" id="aKY-zC-oSR"/>
+                    <connections>
+                        <outlet property="archiveTabelView" destination="yhf-WX-j9i" id="TJq-ah-PiG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qLi-Eu-tgg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1983" y="-322"/>
         </scene>
         <!--Send Message Controller-->
         <scene sceneID="Rh9-Eb-W7N">
@@ -231,7 +320,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J5V-rp-219" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="Dek-1N-aPJ" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1908.6956521739132" y="-282.58928571428572"/>
+            <point key="canvasLocation" x="3006" y="74"/>
         </scene>
         <!--Detail Message Controller-->
         <scene sceneID="Oqq-3c-Vjd">
@@ -283,7 +372,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kVv-x9-fA1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1886" y="455"/>
+            <point key="canvasLocation" x="1913" y="552"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="taX-DI-4Ub">
@@ -305,8 +394,12 @@
         </scene>
     </scenes>
     <resources>
+        <image name="archivebox" catalog="system" width="64" height="52"/>
         <image name="line.horizontal.3" catalog="system" width="64" height="32"/>
         <image name="paperplane.fill" catalog="system" width="64" height="60"/>
         <image name="square.and.pencil" catalog="system" width="64" height="58"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="CI3-pN-SYe"/>
+    </inferredMetricsTieBreakers>
 </document>

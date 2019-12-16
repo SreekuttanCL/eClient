@@ -12,8 +12,8 @@ import ObjectMapper
 
 class Posts: Mappable {
     
-    var userId: Int?
-    var id: Int?
+    var userId: String?
+    var id: String?
     var title: String?
     var body: String?
     
